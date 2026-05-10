@@ -1,524 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>School of Clowns</title>
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
-
-body{
-background:#020817;
-color:white;
-overflow-x:hidden;
-}
-
-body::before{
-content:'';
-position:fixed;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at top left, rgba(0,140,255,0.25), transparent 30%),
-radial-gradient(circle at bottom right, rgba(0,100,255,0.15), transparent 30%);
-z-index:-1;
-}
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-border-bottom:1px solid rgba(255,255,255,0.08);
-background:#020817ee;
-backdrop-filter:blur(12px);
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.logo img{
-width:75px;
-border-radius:12px;
-}
-
-nav{
-display:flex;
-gap:30px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-size:14px;
-font-weight:bold;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#2196ff;
-}
-
-.waitlist-btn{
-padding:12px 25px;
-border:2px solid #1e90ff;
-border-radius:30px;
-background:transparent;
-color:white;
-font-weight:bold;
-cursor:pointer;
-transition:0.3s;
-}
-
-.waitlist-btn:hover{
-background:#1e90ff;
-}
-
-.hero{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:80px 60px;
-gap:40px;
-}
-
-.hero-text{
-max-width:50%;
-}
-
-.hero-text h1{
-font-size:68px;
-line-height:1;
-margin-bottom:25px;
-}
-
-.hero-text h1 span{
-color:#1e90ff;
-}
-
-.hero-text p{
-color:#c8d4e4;
-font-size:20px;
-line-height:1.7;
-margin-bottom:30px;
-}
-
-.hero-buttons{
-display:flex;
-gap:20px;
-}
-
-.hero-buttons button{
-padding:16px 28px;
-border:none;
-border-radius:12px;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
-transition:0.3s;
-}
-
-.primary-btn{
-background:#1e90ff;
-color:white;
-}
-
-.secondary-btn{
-background:transparent;
-border:2px solid #1e90ff;
-color:white;
-}
-
-.primary-btn:hover,
-.secondary-btn:hover{
-transform:translateY(-3px);
-}
-
-.hero-image img{
-width:650px;
-max-width:100%;
-}
-
-.section{
-padding:60px;
-}
-
-.section-title{
-font-size:46px;
-margin-bottom:40px;
-}
-
-.fish-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-}
-
-.fish-card{
-background:#071224;
-border:1px solid rgba(255,255,255,0.08);
-border-radius:20px;
-overflow:hidden;
-transition:0.3s;
-}
-
-.fish-card:hover{
-transform:translateY(-6px);
-border-color:#1e90ff;
-}
-
-.fish-card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-
-.fish-info{
-padding:20px;
-}
-
-.fish-info h3{
-margin-bottom:10px;
-}
-
-.reserve-btn{
-width:100%;
-margin-top:18px;
-padding:14px;
-border:none;
-border-radius:12px;
-background:#1e90ff;
-color:white;
-font-weight:bold;
-cursor:pointer;
-transition:0.3s;
-}
-
-.reserve-btn:hover{
-background:#0070e8;
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:60px;
-}
-
-.feature-box{
-background:#071224;
-padding:30px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.08);
-}
-
-.feature-box h4{
-margin-bottom:15px;
-font-size:22px;
-color:#1e90ff;
-}
-
-.about-section{
-display:flex;
-gap:50px;
-align-items:center;
-margin-top:80px;
-}
-
-.about-section img{
-width:400px;
-border-radius:24px;
-}
-
-.about-text{
-max-width:600px;
-}
-
-.about-text h2{
-font-size:50px;
-margin-bottom:25px;
-}
-
-.about-text p{
-color:#c8d4e4;
-line-height:1.8;
-margin-bottom:20px;
-}
-
-.waitlist{
-background:#071224;
-padding:40px;
-border-radius:24px;
-border:1px solid rgba(255,255,255,0.08);
-max-width:500px;
-}
-
-.waitlist h2{
-font-size:42px;
-margin-bottom:15px;
-}
-
-.waitlist p{
-color:#c8d4e4;
-margin-bottom:25px;
-}
-
-.waitlist input{
-width:100%;
-padding:16px;
-margin-bottom:15px;
-background:#0b1b30;
-border:none;
-border-radius:12px;
-color:white;
-}
-
-.waitlist button{
-width:100%;
-padding:16px;
-background:#1e90ff;
-border:none;
-border-radius:12px;
-color:white;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
-}
-
-footer{
-margin-top:80px;
-padding:30px 60px;
-border-top:1px solid rgba(255,255,255,0.08);
-display:flex;
-justify-content:space-between;
-align-items:center;
-color:#9fb3c8;
-}
-
-@media(max-width:1000px){
-
-.hero{
-flex-direction:column;
-text-align:center;
-}
-
-.hero-text{
-max-width:100%;
-}
-
-.hero-buttons{
-justify-content:center;
-}
-
-.about-section{
-flex-direction:column;
-}
-
-header{
-padding:20px;
-flex-direction:column;
-gap:20px;
-}
-
-nav{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.section{
-padding:40px 20px;
-}
-
-footer{
-flex-direction:column;
-gap:15px;
-text-align:center;
-}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>School of Clowns</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 
 <body>
 
-<header>
+<header class="topbar">
 
-<div class="logo">
-<img src="logo.png">
-</div>
+  <div class="logo-wrap">
+    <img src="logo.png" class="site-logo">
+  </div>
 
-<nav>
-<a href="#">HOME</a>
-<a href="#">AVAILABLE FISH</a>
-<a href="#">ABOUT US</a>
-<a href="#">CARE & FAQ</a>
-<a href="#">SHIPPING & PICKUP</a>
-<a href="#">CONTACT</a>
-</nav>
+  <nav class="nav">
+    <a class="active" href="#">HOME</a>
+    <a href="#fish">AVAILABLE FISH</a>
+    <a href="#about">ABOUT US</a>
+    <a href="#care">CARE & FAQ</a>
+    <a href="#shipping">SHIPPING & PICKUP</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
 
-<button class="waitlist-btn">JOIN WAITLIST</button>
+  <div class="nav-right">
+    <span>◎</span>
+    <span>✉</span>
+    <a href="#contact" class="join-pill">JOIN WAITLIST</a>
+  </div>
 
 </header>
 
 <section class="hero">
 
-<div class="hero-text">
+  <div class="hero-left">
 
-<h1>
-RAISED WITH PASSION.<br>
-<span>SHIPPED WITH CARE.</span>
-</h1>
+    <p class="blue-label">PREMIUM DESIGNER CLOWNFISH</p>
 
-<p>
-High-quality, captive-bred designer clownfish raised in Ramstein, Germany.
-Healthy. Hardy. Bred for excellence.
-</p>
+    <h1>
+      RAISED WITH PASSION.<br>
+      <span>SHIPPED WITH CARE.</span>
+    </h1>
 
-<div class="hero-buttons">
-<button class="primary-btn">VIEW AVAILABLE FISH</button>
-<button class="secondary-btn">ABOUT US</button>
-</div>
+    <div class="small-line"></div>
 
-</div>
+    <p class="hero-copy">
+      High-quality, captive-bred designer clownfish
+      raised in Ramstein, Germany.
+      Healthy. Hardy. Bred for excellence.
+    </p>
 
-<div class="hero-image">
-<img src="logo.png">
-</div>
+    <div class="hero-buttons">
+      <a href="#fish" class="main-btn">VIEW AVAILABLE FISH</a>
+      <a href="#about" class="outline-btn">ABOUT US</a>
+    </div>
+
+  </div>
+
+  <div class="hero-right">
+    <img src="logo.png" class="hero-logo">
+  </div>
 
 </section>
 
-<section class="section">
+<section class="fish-section" id="fish">
 
-<h2 class="section-title">Premium Designer Clownfish</h2>
+  <div class="section-top">
+    <div>
+      <p class="blue-label">AVAILABLE FISH</p>
+      <h2>Premium Designer Clownfish</h2>
+    </div>
 
-<div class="fish-grid">
+    <a href="#" class="view-all">VIEW ALL FISH</a>
+  </div>
 
-<div class="fish-card">
-<img src="https://images.unsplash.com/photo-1524704796725-9fc3044a58b2?q=80&w=1200&auto=format&fit=crop">
-<div class="fish-info">
-<h3>Platinum Storm</h3>
-<p>Premium designer morph</p>
-<button class="reserve-btn">RESERVE NOW</button>
-</div>
-</div>
+  <div class="fish-row">
 
-<div class="fish-card">
-<img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&auto=format&fit=crop">
-<div class="fish-info">
-<h3>Snowflake Picasso</h3>
-<p>Captive bred</p>
-<button class="reserve-btn">RESERVE NOW</button>
-</div>
-</div>
+    <div class="fish-card">
+      <img src="https://images.unsplash.com/photo-1524704796725-9fc3044a58b2?q=80&w=1200&auto=format&fit=crop">
+      <h3>Platinum Storm</h3>
+      <p>Amphiprion ocellaris</p>
+      <span class="soon">COMING SOON</span>
+      <a href="#contact" class="reserve">RESERVE NOW</a>
+    </div>
 
-<div class="fish-card">
-<img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=1200&auto=format&fit=crop">
-<div class="fish-info">
-<h3>Onyx Storm</h3>
-<p>Rare pattern</p>
-<button class="reserve-btn">RESERVE NOW</button>
-</div>
-</div>
+    <div class="fish-card">
+      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&auto=format&fit=crop">
+      <h3>Snowflake Picasso</h3>
+      <p>Amphiprion ocellaris</p>
+      <span class="soon">COMING SOON</span>
+      <a href="#contact" class="reserve">RESERVE NOW</a>
+    </div>
 
-<div class="fish-card">
-<img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?q=80&w=1200&auto=format&fit=crop">
-<div class="fish-info">
-<h3>WY White</h3>
-<p>Designer pair</p>
-<button class="reserve-btn">RESERVE NOW</button>
-</div>
-</div>
+    <div class="fish-card">
+      <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=1200&auto=format&fit=crop">
+      <h3>Onyx Storm</h3>
+      <p>Amphiprion ocellaris</p>
+      <span class="soon">COMING SOON</span>
+      <a href="#contact" class="reserve">RESERVE NOW</a>
+    </div>
 
-</div>
+    <div class="fish-card">
+      <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?q=80&w=1200&auto=format&fit=crop">
+      <h3>WY White</h3>
+      <p>Amphiprion ocellaris</p>
+      <span class="soon">COMING SOON</span>
+      <a href="#contact" class="reserve">RESERVE NOW</a>
+    </div>
 
-<div class="features">
+    <div class="fish-card">
+      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&auto=format&fit=crop">
+      <h3>Misbar Picasso</h3>
+      <p>Amphiprion ocellaris</p>
+      <span class="soon">COMING SOON</span>
+      <a href="#contact" class="reserve">RESERVE NOW</a>
+    </div>
 
-<div class="feature-box">
-<h4>Health First</h4>
-<p>
-All fish are raised in stable, clean systems with a focus on long-term health.
-</p>
-</div>
+  </div>
 
-<div class="feature-box">
-<h4>Selective Breeding</h4>
-<p>
-Carefully bred for color, pattern, and temperament.
-</p>
-</div>
+</section>
 
-<div class="feature-box">
-<h4>Secure Shipping</h4>
-<p>
-Insulated boxes and heat/cold packs used as needed.
-</p>
-</div>
+<section class="about-contact">
 
-<div class="feature-box">
-<h4>Support That Cares</h4>
-<p>
-We help before, during, and after your purchase.
-</p>
-</div>
+  <div class="about" id="about">
 
-</div>
+    <p class="blue-label">ABOUT US</p>
 
-<div class="about-section">
+    <h2>Why School of Clowns?</h2>
 
-<div class="about-text">
+    <p>
+      We are a small-scale breeder based in Ramstein, Germany dedicated to producing exceptional designer clownfish.
+    </p>
 
-<h2>Why School of Clowns?</h2>
+    <ul>
+      <li>100% Captive Bred</li>
+      <li>Raised in Germany</li>
+      <li>Quality Over Quantity</li>
+      <li>Passion in Every Pair</li>
+    </ul>
 
-<p>
-We are a small-scale breeder based in Ramstein, Germany dedicated to producing exceptional designer clownfish.
-</p>
+  </div>
 
-<p>
-Every fish is bred and raised in our own systems with the highest standards of care.
-</p>
+  <div class="waitlist-box" id="contact">
 
-</div>
+    <p class="blue-label">JOIN THE WAITLIST</p>
 
-<div class="waitlist">
+    <h2>Be the first to know</h2>
 
-<h2>Be the first to know</h2>
+    <p>
+      New fish. Restocks. Exclusive drops.
+    </p>
 
-<p>
-New fish. Restocks. Exclusive drops.
-</p>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Email Address">
 
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Email Address">
+    <button>JOIN WAITLIST</button>
 
-<button>JOIN WAITLIST</button>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 <footer>
-
-<div>
-📍 Ramstein, Germany
-</div>
-
-<div>
-© 2026 School of Clowns
-</div>
-
+  <div>Ramstein, Germany</div>
+  <div>© 2026 School of Clowns</div>
 </footer>
 
 </body>
