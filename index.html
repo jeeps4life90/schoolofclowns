@@ -8,286 +8,119 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top, #073b5c 0%, #020814 55%, #000 100%);
+      background: linear-gradient(180deg, #020617, #001f3f);
       color: white;
+      text-align: center;
     }
 
     header {
-      text-align: center;
-      padding: 40px 20px 25px;
-      background: linear-gradient(180deg, #03111f, #041b2f);
-      border-bottom: 2px solid #00bfff;
+      padding: 40px 20px;
     }
 
     .logo {
-      max-width: 160px;
+      width: 140px;
       margin-bottom: 15px;
     }
 
     h1 {
-      font-size: 42px;
-      margin: 10px 0;
-      color: #4ddcff;
-      text-shadow: 0 0 15px #00bfff;
+      font-size: 44px;
+      color: #38bdf8;
+      margin: 0;
     }
 
     .tagline {
-      color: #d9f7ff;
-      font-size: 18px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 35px 20px;
-    }
-
-    .hero h2 {
-      font-size: 32px;
-      color: #ffffff;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      color: #bfefff;
-      line-height: 1.6;
+      color: #cbd5e1;
+      font-size: 20px;
+      margin-top: 10px;
     }
 
     .fish-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
-      padding: 35px;
-      max-width: 1200px;
+      padding: 30px;
+      max-width: 1100px;
       margin: auto;
     }
 
     .fish-card {
-      background: linear-gradient(145deg, #061c30, #020812);
-      border: 1px solid #00bfff;
-      border-radius: 20px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid #38bdf8;
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 0 25px rgba(0, 191, 255, 0.25);
-      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
     }
 
-    .fish-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 35px rgba(0, 191, 255, 0.55);
+    .fish-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
     }
 
-    .fish-art {
-      height: 190px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle, #0d4f78, #020814);
-      position: relative;
+    .fish-card h2 {
+      color: #38bdf8;
+      margin: 18px 0 8px;
     }
 
-    .fish {
-      width: 190px;
-      height: 88px;
-      border-radius: 50% 45% 45% 50%;
-      position: relative;
-      box-shadow: inset -12px -8px 20px rgba(0,0,0,0.45);
-    }
-
-    .fish::before {
-      content: "";
-      position: absolute;
-      right: -42px;
-      top: 18px;
-      width: 60px;
-      height: 52px;
-      clip-path: polygon(0 50%, 100% 0, 75% 50%, 100% 100%);
-      background: inherit;
-    }
-
-    .fish::after {
-      content: "";
-      position: absolute;
-      left: 22px;
-      top: 28px;
-      width: 10px;
-      height: 10px;
-      background: white;
-      border-radius: 50%;
-      box-shadow: 0 0 0 4px black;
-    }
-
-    .storm {
-      background:
-        radial-gradient(circle at 35% 45%, white 0 18%, transparent 19%),
-        radial-gradient(circle at 62% 50%, white 0 22%, transparent 23%),
-        linear-gradient(90deg, #050505 0%, #111 45%, #f4f4f4 46%, #111 65%, #050505 100%);
-    }
-
-    .wyoming {
-      background:
-        linear-gradient(90deg, #fff 0 18%, #ff7a00 19% 31%, #fff 32% 60%, #ff7a00 61% 75%, #fff 76% 100%);
-    }
-
-    .blackice {
-      background:
-        linear-gradient(90deg, #050505 0 22%, #fff 23% 32%, #ff8c00 33% 55%, #fff 56% 66%, #050505 67% 100%);
-    }
-
-    .onyx {
-      background:
-        linear-gradient(90deg, #020202 0 28%, #fff 29% 38%, #0a0a0a 39% 72%, #fff 73% 82%, #030303 83% 100%);
-    }
-
-    .snowflake {
-      background:
-        radial-gradient(circle at 42% 45%, white 0 20%, transparent 21%),
-        radial-gradient(circle at 65% 50%, white 0 17%, transparent 18%),
-        linear-gradient(90deg, #ff7a00, #ff9d00);
-    }
-
-    .phantom {
-      background:
-        radial-gradient(circle at 55% 48%, #ffffff 0 16%, transparent 17%),
-        linear-gradient(90deg, #000 0%, #202020 50%, #050505 100%);
-    }
-
-    .fish-info {
-      padding: 22px;
-    }
-
-    .fish-info h3 {
-      margin-top: 0;
-      color: #4ddcff;
-      font-size: 24px;
-    }
-
-    .fish-info p {
-      color: #d7f6ff;
-      line-height: 1.5;
-    }
-
-    .price {
-      color: #ffffff;
-      font-weight: bold;
-      font-size: 20px;
-      margin: 15px 0;
+    .fish-card p {
+      padding: 0 18px;
+      color: #dbeafe;
+      min-height: 55px;
     }
 
     .reserve-btn {
-      display: block;
-      text-align: center;
-      padding: 13px;
-      border-radius: 12px;
-      background: linear-gradient(90deg, #00bfff, #0077ff);
-      color: white;
-      text-decoration: none;
+      display: inline-block;
+      margin: 15px 0 25px;
+      padding: 12px 24px;
+      background: #38bdf8;
+      color: #020617;
       font-weight: bold;
-      box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+      text-decoration: none;
+      border-radius: 999px;
     }
 
     footer {
-      text-align: center;
-      padding: 30px;
-      color: #9edfff;
-      border-top: 1px solid #073b5c;
-      margin-top: 30px;
+      padding: 25px;
+      color: #94a3b8;
     }
   </style>
 </head>
 
 <body>
   <header>
-    <img src="logo.svg" alt="School of Clowns Logo" class="logo">
+    <img src="logo.svg" alt="School of Clowns Logo" class="logo" />
     <h1>School of Clowns</h1>
-    <p class="tagline">Premium Designer Clownfish • Germany Based • Reserve Yours Today</p>
+    <p class="tagline">Premium Designer Clownfish</p>
   </header>
 
-  <section class="hero">
-    <h2>Designer Clownfish With Rare Patterns</h2>
-    <p>
-      Hand-selected designer clownfish bred for bold color, clean patterns, and standout appearance.
-      Reserve premium pairs and grow-outs before they are gone.
-    </p>
-  </section>
+  <main class="fish-grid">
 
-  <section class="fish-grid">
+    <section class="fish-card">
+      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=80" alt="Designer clownfish" />
+      <h2>Black Storm</h2>
+      <p>Premium designer clownfish with bold black and white storm-style patterning.</p>
+      <a href="mailto:schoolofclowns@gmail.com?subject=Reserve Black Storm Clownfish" class="reserve-btn">Reserve Now</a>
+    </section>
 
-    <div class="fish-card">
-      <div class="fish-art">
-        <div class="fish storm"></div>
-      </div>
-      <div class="fish-info">
-        <h3>Black Storm Clownfish</h3>
-        <p>Dark body with dramatic white storm-style patterning. One of the most eye-catching designer clowns.</p>
-        <div class="price">Starting at €120</div>
-        <a href="mailto:schoolofclowns@gmail.com?subject=Reserve Black Storm Clownfish" class="reserve-btn">Reserve Now</a>
-      </div>
-    </div>
+    <section class="fish-card">
+      <img src="https://images.unsplash.com/photo-1524704796725-9fc3044a58b2?auto=format&fit=crop&w=900&q=80" alt="White designer clownfish" />
+      <h2>Wyoming White</h2>
+      <p>Beautiful white designer clownfish with clean premium coloration.</p>
+      <a href="mailto:schoolofclowns@gmail.com?subject=Reserve Wyoming White Clownfish" class="reserve-btn">Reserve Now</a>
+    </section>
 
-    <div class="fish-card">
-      <div class="fish-art">
-        <div class="fish wyoming"></div>
-      </div>
-      <div class="fish-info">
-        <h3>Wyoming White Clownfish</h3>
-        <p>Mostly white body with bright orange accents. Clean, premium, and highly desirable.</p>
-        <div class="price">Starting at €100</div>
-        <a href="mailto:schoolofclowns@gmail.com?subject=Reserve Wyoming White Clownfish" class="reserve-btn">Reserve Now</a>
-      </div>
-    </div>
+    <section class="fish-card">
+      <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=900&q=80" alt="Snowflake clownfish" />
+      <h2>Snowflake Clown</h2>
+      <p>High-pattern designer clownfish selected for unique markings and vibrant color.</p>
+      <a href="mailto:schoolofclowns@gmail.com?subject=Reserve Snowflake Clownfish" class="reserve-btn">Reserve Now</a>
+    </section>
 
-    <div class="fish-card">
-      <div class="fish-art">
-        <div class="fish blackice"></div>
-      </div>
-      <div class="fish-info">
-        <h3>Black Ice Clownfish</h3>
-        <p>Orange, black, and white contrast with designer markings and strong aquarium presence.</p>
-        <div class="price">Starting at €90</div>
-        <a href="mailto:schoolofclowns@gmail.com?subject=Reserve Black Ice Clownfish" class="reserve-btn">Reserve Now</a>
-      </div>
-    </div>
-
-    <div class="fish-card">
-      <div class="fish-art">
-        <div class="fish onyx"></div>
-      </div>
-      <div class="fish-info">
-        <h3>Black Onyx Clownfish</h3>
-        <p>Deep black designer clownfish with clean white banding and a bold premium look.</p>
-        <div class="price">Starting at €85</div>
-        <a href="mailto:schoolofclowns@gmail.com?subject=Reserve Black Onyx Clownfish" class="reserve-btn">Reserve Now</a>
-      </div>
-    </div>
-
-    <div class="fish-card">
-      <div class="fish-art">
-        <div class="fish snowflake"></div>
-      </div>
-      <div class="fish-info">
-        <h3>Snowflake Clownfish</h3>
-        <p>Bright orange designer clownfish with irregular white snowflake-style markings.</p>
-        <div class="price">Starting at €75</div>
-        <a href="mailto:schoolofclowns@gmail.com?subject=Reserve Snowflake Clownfish" class="reserve-btn">Reserve Now</a>
-      </div>
-    </div>
-
-    <div class="fish-card">
-      <div class="fish-art">
-        <div class="fish phantom"></div>
-      </div>
-      <div class="fish-info">
-        <h3>Phantom Clownfish</h3>
-        <p>Dark designer clownfish with ghost-like white markings and a rare high-end appearance.</p>
-        <div class="price">Starting at €110</div>
-        <a href="mailto:schoolofclowns@gmail.com?subject=Reserve Phantom Clownfish" class="reserve-btn">Reserve Now</a>
-      </div>
-    </div>
-
-  </section>
+  </main>
 
   <footer>
-    © 2026 School of Clowns | Premium Designer Clownfish
+    © 2026 School of Clowns
   </footer>
 </body>
 </html>
