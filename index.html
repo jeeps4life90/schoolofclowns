@@ -631,3 +631,41 @@ We are a small-scale breeder based in Ramstein, Germany dedicated to producing e
 <li>100% Captive Bred</li>
 <li>Raised in Germany</li>
 <li>Quality Over Quantity</li>
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbyarUJlybwnFDMVQjg3tOMekzNjF69T15u-1iEpspWzwhdgX1eMoDUbCpt1ptVlcmqNXA/exec";
+
+document.querySelectorAll(".waitlist-form").forEach(form => {
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const emailInput = form.querySelector('input[type="email"]');
+    const button = form.querySelector("button");
+
+    const fishCard = form.closest(".fish-card");
+    const fish = fishCard ? fishCard.querySelector("h3").innerText : "General Waitlist";
+
+    const formData = new FormData();
+    formData.append("email", emailInput.value);
+    formData.append("fish", fish);
+    formData.append("source", "School of Clowns Website");
+
+    button.innerText = "Joining...";
+
+    fetch(scriptURL, {
+      method: "POST",
+      body: formData
+    })
+    .then(() => {
+      button.innerText = "Joined!";
+      emailInput.value = "";
+
+      setTimeout(() => {
+        button.innerText = "Join Waitlist";
+      }, 2500);
+    })
+    .catch(() => {
+      button.innerText = "Try Again";
+    });
+  });
+});
+</script>
